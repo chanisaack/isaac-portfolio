@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Borealis — FIRST Robotics '24 | Isaac Chan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <div class="nav-dropdown">
+      <button class="nav-text dropdown-trigger" type="button">Projects &#9662;</button>
+      <div class="dropdown-menu">
+        <a href="id0.html">ID0: The Agentic Hardware Robot</a>
+        <a href="cove.html">Cove: 7DOF Industrial Robotic Arm</a>
+        <a href="boxy.html">Boxy: FIRST Robotics '25</a>
+        <a href="borealis.html">Borealis: FIRST Robotics '24</a>
+        <a href="olos.html">Olos: Therapy Audio Journaling</a>
+      </div>
+    </div>
+    <a href="https://www.linkedin.com/in/isaac-k-chan" target="_blank" class="nav-icon" aria-label="LinkedIn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4.5 8.5H8V20H4.5V8.5Z" fill="currentColor"/><path d="M6.25 7C7.35 7 8.25 6.1 8.25 5C8.25 3.9 7.35 3 6.25 3C5.15 3 4.25 3.9 4.25 5C4.25 6.1 5.15 7 6.25 7Z" fill="currentColor"/><path d="M10.5 8.5H13.8V10.06H13.85C14.3 9.22 15.4 8.33 17.03 8.33C20.5 8.33 21.5 10.4 21.5 13.4V20H18V14.1C18 12.66 17.5 11.5 16.13 11.5C14.75 11.5 14 12.5 14 14.1V20H10.5V8.5Z" fill="currentColor"/></svg>
+    </a>
+  </nav>
+
+  <div class="project-hero">
+    <a href="../index.html#work" class="back-link">← Back to home</a>
+    <h1>Borealis: FIRST Robotics '24</h1>
+    <div class="entry-meta">FTC 14473 &nbsp;|&nbsp; Captain, Mechanical Lead &nbsp;|&nbsp; '24</div>
+  </div>
+
+  <div class="carousel" id="carousel">
+    <div class="carousel-track">
+      <div class="carousel-slide active"><img src="media/borealis/borealis-1.jpg" alt="CAD render of the Borealis chassis and climbing hooks"></div>
+      <div class="carousel-slide"><img src="media/borealis/borealis-2.jpg" alt="Borealis robot ready for competition"></div>
+      <div class="carousel-slide"><video src="media/borealis/borealis-video.mp4" poster="media/borealis/borealis-video-poster.jpg" controls playsinline></video></div>
+    </div>
+    <div class="carousel-scrubber">
+      <div class="scrub-seg active"></div>
+      <div class="scrub-seg"></div>
+      <div class="scrub-seg"></div>
+    </div>
+  </div>
+
+  <div class="project-body">
+    <p>A competition robot for CENTERSTAGE, built around a high-speed custom surgical tubing intake and linear rail system that reliably manipulated and stacked game pieces.</p>
+
+    <h2>The problem</h2>
+    <p>CENTERSTAGE required robots to intake hexagonal game pieces, reliably orient and stack them onto a vertical scoring board, then lift themselves off the ground while remaining short enough to drive underneath field structures. The challenge was maximizing cycle speed without introducing transfer jams or sacrificing reliability.</p>
+
+    <h2>What I built</h2>
+    <p>I independently designed the robot's complete mechanical system, iterating through multiple generations of the intake, drivetrain, lift, and scoring mechanisms. The final design featured a surgical tubing intake with an offset funneling system that eliminated jams, a passive one-way gate dumper for consistent scoring, and a pocketed linear rail assembly that doubled as the climbing mechanism. Throughout development, I used finite element analysis, torque calculations, and rapid prototyping to optimize weight, packaging, and reliability.</p>
+
+    <h2>Outcome</h2>
+    <p>The finished robot consistently completed 7-second two-pixel scoring cycles and won multiple awards, including the Design Award and Winning Alliance. More importantly, it taught me how to architect complete robotic systems, balance competing mechanical constraints, and iterate quickly from rough prototypes into robust competition hardware.</p>
+  </div>
+
+  <footer>
+    <div>© Isaac Chan 2026</div>
+    <a href="mailto:chanisaa@usc.edu" class="nav-text">chanisaa@usc.edu</a>
+  </footer>
+
+</div>
+
+<script src="../carousel.js"></script>
+<script src="../script.js"></script>
+</body>
+</html>

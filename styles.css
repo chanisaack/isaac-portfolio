@@ -1,0 +1,209 @@
+/* ============================================
+   ISAAC CHAN PORTFOLIO — DESIGN TOKENS
+   Keep this file as the single source of truth
+   for color, type, and spacing across all pages
+   (homepage + individual project pages).
+
+   FONT NOTE: Isaac's reference deck uses PP Neue
+   Montreal, Polymath Display, and PP Editorial New
+   (all paid Pangram Pangram fonts). Headline/title/
+   body copy uses Instrument Sans (Google Fonts, free)
+   — chosen after comparing several free grotesk
+   alternatives, since plain Inter reads as the default
+   "AI-generated site" font. IBM Plex Mono still handles
+   nav/meta/specs/"View project" links — untouched. If
+   Isaac later buys a web license for PP Neue Montreal /
+   Polymath Display from Pangram Pangram
+   (pangrampangram.com), swap the font-family values
+   below — nothing else needs to change.
+   ============================================ */
+
+:root{
+  --paper:#fbfbf9;
+  --card:#fafaf9;
+  --ink:#16181a;
+  --indigo:#4a5a9c;
+  --blue:#3a5a78;
+  --grid:#eef0eb;
+  --line:#e4e6e0;
+  --muted:#6b7268;
+  --muted-2:#a3a89c;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:'Instrument Sans',sans-serif;
+  background-image:linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size:32px 32px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+a{color:inherit;}
+
+/* ---- nav ---- */
+nav{display:flex;justify-content:space-between;align-items:center;height:64px;box-sizing:border-box;position:relative;}
+.nav-text{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.03em;color:var(--muted);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;transition:.15s;background:none;cursor:pointer;}
+.nav-text:hover{color:var(--ink);border-color:var(--ink);}
+.dropdown-trigger{
+  appearance:none;-webkit-appearance:none;border:none;outline:none;
+  padding:0 0 2px;margin:0;background:none;
+}
+.dropdown-trigger:focus{outline:none;}
+.nav-icon{color:var(--muted);display:flex;align-items:center;transition:.15s;}
+.nav-icon:hover{color:var(--ink);}
+
+/* ---- projects dropdown ---- */
+.nav-dropdown{position:relative;}
+.dropdown-menu{
+  position:absolute;top:calc(100% + 10px);left:0;min-width:260px;
+  background:var(--paper);border:1px solid var(--line);border-radius:2px;
+  box-shadow:0 8px 20px rgba(22,24,26,0.06);
+  padding:6px;opacity:0;visibility:hidden;transform:translateY(-4px);
+  transition:opacity .15s ease, transform .15s ease, visibility .15s;
+  z-index:20;
+}
+.dropdown-menu.open{opacity:1;visibility:visible;transform:translateY(0);}
+.dropdown-menu a{
+  display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);
+  text-decoration:none;padding:9px 10px;border-radius:2px;transition:.12s;
+}
+.dropdown-menu a:hover{color:var(--ink);background:var(--card);}
+
+/* ---- hero ---- */
+.hero{
+  box-sizing:border-box;min-height:288px;padding:0;
+  display:flex;flex-direction:column;justify-content:center;
+  border-bottom:1px solid var(--line);
+}
+.hero h1{
+  font-family:'Instrument Sans',sans-serif;font-weight:700;font-size:42px;line-height:1.18;
+  margin:0 0 16px;letter-spacing:0em;max-width:600px;
+}
+.hero h1 .accent{color:var(--indigo);}
+.hero p{font-size:15px;color:var(--muted);max-width:660px;line-height:1.6;margin:0;font-weight:400;}
+
+/* ---- hero intro: line 1 fades in, line 2 cycles through typed words ---- */
+.hero-line1{opacity:0;transition:opacity 1.2s ease;}
+.hero-line1.shown{opacity:1;}
+.dynamic-word{font-family:'Instrument Sans',sans-serif;}
+.dynamic-word.selected{
+  background:var(--indigo);color:#fff;border-radius:2px;padding:0 2px;margin:0 -2px;
+  transition:background .12s ease, color .12s ease;
+}
+.type-caret{
+  display:inline-block;width:2px;height:0.85em;margin-left:2px;background:var(--ink);
+  vertical-align:-0.1em;
+  animation:caretBlink 1s step-end infinite;
+}
+.type-caret.typing{animation:none;opacity:1;}
+@keyframes caretBlink{0%,100%{opacity:1;}50%{opacity:0;}}
+
+/* ---- project entry (image + text side by side) ---- */
+.entry{
+  box-sizing:border-box;min-height:224px;
+  display:flex;gap:24px;align-items:center;
+  padding:0;border-bottom:1px solid var(--line);
+  text-decoration:none;color:inherit;
+  opacity:0;transform:translateY(10px);transition:opacity .5s ease, transform .5s ease;
+}
+.entry.visible{opacity:1;transform:translateY(0);}
+.entry-media{
+  flex:0 0 auto;height:132px;background:var(--card);border:1px solid var(--line);border-radius:2px;
+  display:flex;align-items:center;justify-content:center;color:var(--muted-2);
+  font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;text-align:center;
+  overflow:hidden;position:relative;transition:border-color .2s ease;
+}
+.entry-media::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(135deg, transparent 48%, var(--grid) 49%, var(--grid) 51%, transparent 52%);
+}
+.entry-media img, .entry-media video{
+  height:100%;width:auto;display:block;object-fit:contain;position:relative;z-index:1;
+}
+.entry:hover .entry-media{border-color:var(--muted-2);}
+
+.entry-content{flex:1;padding-top:2px;}
+.entry-title{font-family:'Instrument Sans',sans-serif;font-size:19px;font-weight:600;margin:0 0 8px;letter-spacing:-0.005em;transition:color .2s ease;}
+.entry:hover .entry-title{color:var(--indigo);}
+.entry-meta{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted-2);margin-bottom:12px;}
+.entry-desc{font-size:13.5px;color:#40473f;line-height:1.65;max-width:480px;margin:0 0 14px;font-weight:400;}
+
+.view-link{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--blue);display:inline-flex;align-items:center;gap:5px;}
+.view-link .arrow{transition:transform .2s ease;}
+.entry:hover .view-link .arrow{transform:translateX(3px);}
+
+/* ---- footer ---- */
+footer{
+  height:64px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;
+  font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted-2);
+}
+footer .nav-text{color:var(--muted-2);}
+footer .nav-text:hover{color:var(--ink);}
+
+/* ---- project detail page ---- */
+.project-hero{padding:32px 0 28px;border-bottom:1px solid var(--line);}
+.project-hero .back-link{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-decoration:none;display:inline-flex;align-items:center;gap:5px;margin-bottom:20px;}
+.project-hero .back-link:hover{color:var(--ink);}
+.project-hero h1{font-family:'Instrument Sans',sans-serif;font-weight:700;font-size:32px;margin:0 0 10px;letter-spacing:-0.01em;}
+.project-hero .entry-meta{margin-bottom:0;}
+
+.carousel{margin:32px 0;position:relative;}
+.carousel-track{
+  width:fit-content;max-width:100%;height:440px;margin:0 auto;
+  background:var(--card);border:1px solid var(--line);border-radius:2px;
+  display:flex;align-items:center;justify-content:center;color:var(--muted-2);
+  font-family:'IBM Plex Mono',monospace;font-size:12px;overflow:hidden;position:relative;
+}
+.carousel-track::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(135deg, transparent 48%, var(--grid) 49%, var(--grid) 51%, transparent 52%);
+}
+.carousel-slide{display:none;position:relative;z-index:1;height:100%;align-items:center;justify-content:center;}
+.carousel-slide.active{display:flex;}
+.carousel-slide img, .carousel-slide video{
+  display:block;height:100%;width:auto;max-width:100%;object-fit:contain;
+}
+
+/* Hover-scrub segment strip below the media — hovering a segment shows that
+   slide. Sits below the image (not overlaid on top of it) specifically so
+   native video controls on a video slide stay fully clickable.
+   Each segment's real click/hover target is taller than its visible line
+   (via the ::before bar) so it's comfortable to tap on mobile, not just a
+   3px-tall hitbox. */
+.carousel-scrubber{display:flex;gap:6px;margin-top:12px;}
+.scrub-seg{
+  flex:1;height:22px;display:flex;align-items:center;cursor:pointer;position:relative;
+}
+.scrub-seg::before{
+  content:"";display:block;width:100%;height:3px;background:var(--line);border-radius:2px;
+  transition:background .15s ease, transform .15s ease;
+}
+.scrub-seg:hover::before{transform:scaleY(1.6);}
+.scrub-seg.active::before{background:var(--indigo);}
+.carousel-caption{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted-2);
+  margin-top:10px;
+}
+
+.project-body{padding:8px 0 48px;max-width:600px;}
+.project-body p{font-size:14.5px;color:#40473f;line-height:1.75;margin:0 0 18px;}
+.project-body h2{font-family:'Instrument Sans',sans-serif;font-size:16px;font-weight:600;margin:32px 0 12px;}
+
+/* ---- responsive ---- */
+.meta-short{display:none;}
+@media (max-width: 600px){
+  .hero h1{font-size:30px;}
+  .hero{min-height:0;padding:28px 0;}
+  .hero p{font-size:13px;}
+  .entry{flex-direction:column;align-items:flex-start;min-height:0;padding:24px 0;}
+  .entry-media{width:100%;height:auto;flex:none;}
+  .entry-media img, .entry-media video{width:100%;height:auto;object-fit:contain;}
+  .carousel-track{height:280px;}
+  .carousel-slide img, .carousel-slide video{height:100%;}
+  .scrub-seg{height:32px;}
+  nav{flex-wrap:wrap;height:auto;padding:16px 0;}
+  .meta-full{display:none;}
+  .meta-short{display:inline;}
+}

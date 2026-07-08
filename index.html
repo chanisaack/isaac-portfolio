@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isaac Chan — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <div class="nav-dropdown">
+      <button class="nav-text dropdown-trigger" type="button">Projects ▾</button>
+      <div class="dropdown-menu">
+        <a href="projects/id0.html">ID0: The Agentic Hardware Robot</a>
+        <a href="projects/cove.html">Cove: 7DOF Industrial Robotic Arm</a>
+        <a href="projects/boxy.html">Boxy: FIRST Robotics '25</a>
+        <a href="projects/borealis.html">Borealis: FIRST Robotics '24</a>
+        <a href="projects/olos.html">Olos: Therapy Audio Journaling</a>
+      </div>
+    </div>
+    <a href="https://www.linkedin.com/in/isaac-k-chan" target="_blank" class="nav-icon" aria-label="LinkedIn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4.5 8.5H8V20H4.5V8.5Z" fill="currentColor"/><path d="M6.25 7C7.35 7 8.25 6.1 8.25 5C8.25 3.9 7.35 3 6.25 3C5.15 3 4.25 3.9 4.25 5C4.25 6.1 5.15 7 6.25 7Z" fill="currentColor"/><path d="M10.5 8.5H13.8V10.06H13.85C14.3 9.22 15.4 8.33 17.03 8.33C20.5 8.33 21.5 10.4 21.5 13.4V20H18V14.1C18 12.66 17.5 11.5 16.13 11.5C14.75 11.5 14 12.5 14 14.1V20H10.5V8.5Z" fill="currentColor"/></svg>
+    </a>
+  </nav>
+
+  <div class="hero">
+    <h1><span class="hero-line1" id="heroLine1">I'm <span class="accent">Isaac Chan</span>,</span><br><span class="dynamic-word" id="dynamicWord"></span><span class="type-caret" id="typeCaret"></span></h1>
+    <p>Recently worked as a Specialized Hardware Engineering Intern at Amazon's AI Innovation Lab.<br>
+    Check out my non-NDA projects below :)</p>
+  </div>
+
+  <div id="work"></div>
+
+  <a class="entry" href="projects/id0.html">
+    <div class="entry-media"><img src="projects/media/id0/id0-1.jpg" alt="ID0 agentic hardware robot"></div>
+    <div class="entry-content">
+      <h3 class="entry-title">ID0: The Agentic Hardware Robot</h3>
+      <div class="entry-meta">Y Combinator RoboHacks &nbsp;|&nbsp; Mechanical Lead &nbsp;|&nbsp; '26</div>
+      <p class="entry-desc">An agentic hardware robot that autonomously designs, 3D prints, and swaps custom tools for each task, enabling robots to create the hardware they need instead of relying on a single general-purpose gripper.</p>
+      <span class="view-link">View project <span class="arrow">→</span></span>
+    </div>
+  </a>
+
+  <a class="entry" href="projects/cove.html">
+    <div class="entry-media"><img src="projects/media/cove/cove-1.jpg" alt="Cove 7DOF industrial robotic arm"></div>
+    <div class="entry-content">
+      <h3 class="entry-title">Cove: 7DOF Industrial Robotic Arm</h3>
+      <div class="entry-meta">
+        <span class="meta-full">USC TerraLabs &nbsp;|&nbsp; Director of Technology, Project Manager &nbsp;|&nbsp; '26</span>
+        <span class="meta-short">USC Terra Labs &nbsp;|&nbsp; Director of Tech, PM &nbsp;|&nbsp; '26</span>
+      </div>
+      <p class="entry-desc">A custom 3 foot robotic arm that autonomously prepares matcha using an electromagnetic end effector, demonstrating rapid end-to-end development of an industrial human-interactive manipulation platform.</p>
+      <span class="view-link">View project <span class="arrow">→</span></span>
+    </div>
+  </a>
+
+  <a class="entry" href="projects/boxy.html">
+    <div class="entry-media"><img src="projects/media/boxy/boxy-1.jpg" alt="Boxy FTC competition robot"></div>
+    <div class="entry-content">
+      <h3 class="entry-title">Boxy: FIRST Robotics '25</h3>
+      <div class="entry-meta">FTC 14473 &nbsp;|&nbsp; Captain, Mechanical Lead &nbsp;|&nbsp; '25</div>
+      <p class="entry-desc">A competition robot for INTO THE DEEP built around a telescoping coaxial box tube arm capable of manipulating game pieces at high speed while remaining compact enough to climb.</p>
+      <span class="view-link">View project <span class="arrow">→</span></span>
+    </div>
+  </a>
+
+  <a class="entry" href="projects/borealis.html">
+    <div class="entry-media"><img src="projects/media/borealis/borealis-1.jpg" alt="Borealis FTC competition robot"></div>
+    <div class="entry-content">
+      <h3 class="entry-title">Borealis: FIRST Robotics '24</h3>
+      <div class="entry-meta">FTC 14473 &nbsp;|&nbsp; Captain, Mechanical Lead &nbsp;|&nbsp; '24</div>
+      <p class="entry-desc">A competition robot for CENTERSTAGE, built around a high-speed custom surgical tubing intake and linear rail system that reliably manipulated and stacked game pieces.</p>
+      <span class="view-link">View project <span class="arrow">→</span></span>
+    </div>
+  </a>
+
+  <a class="entry" href="projects/olos.html">
+    <div class="entry-media"><img src="projects/media/olos/olos-1.jpg" alt="Olos team accepting the Judges' Choice Award"></div>
+    <div class="entry-content">
+      <h3 class="entry-title">Olos: Therapy Audio Journaling Tool</h3>
+      <div class="entry-meta">USC SEP &nbsp;|&nbsp; Co-Founder &nbsp;|&nbsp; '25</div>
+      <p class="entry-desc">An AI-powered pre-session analysis platform that lets therapy clients record updates between sessions for therapists, helping sessions start with summarized context to improve client retention.</p>
+      <span class="view-link">View project <span class="arrow">→</span></span>
+    </div>
+  </a>
+
+  <footer>
+    <div>© Isaac Chan 2026</div>
+    <a href="mailto:chanisaa@usc.edu" class="nav-text">chanisaa@usc.edu</a>
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
