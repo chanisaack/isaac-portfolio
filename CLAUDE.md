@@ -11,6 +11,9 @@ Each project has a `projects/media/<slug>/` folder: numbered images (`<slug>-1.j
 
 **Carousel frame (deliberate, don't add back):** `.carousel-track` has no background, border, or decorative pattern — media sits directly on the page's own grid background. It has a fixed height (440px desktop / 280px mobile) purely to reserve vertical space and prevent layout shift as slides of different aspect ratios are hovered, not to visually frame the content. If a slide is short/wide enough that it doesn't fill that height, the page's grid just shows through the gap — that's correct, not a bug.
 
+### SEO
+Every page has: a unique `<title>`, `<meta name="description">`, canonical URL, Open Graph tags, and Twitter card tags (all pointing to `https://www.isaac.engineering` — the www subdomain, since that's Isaac's chosen primary in Vercel). Homepage also has a JSON-LD `Person` schema block identifying Isaac by name, university, and LinkedIn. `robots.txt` and `sitemap.xml` live at the project root. If adding a 6th project, add its meta block (copy an existing project page's `<head>` as a template) and add its URL to `sitemap.xml`.
+
 ### The five projects, in homepage order
 1. **ID0: The Agentic Hardware Robot** — `projects/id0.html` — YC RoboHacks, '26
 2. **Cove: 7DOF Industrial Robotic Arm** — `projects/cove.html` — USC TerraLabs, '26
