@@ -14,16 +14,17 @@ Each project has a `projects/media/<slug>/` folder: numbered images (`<slug>-1.j
 ### SEO
 Every page has: a unique `<title>`, `<meta name="description">`, canonical URL, Open Graph tags, and Twitter card tags (all pointing to `https://www.isaac.engineering` — the www subdomain, since that's Isaac's chosen primary in Vercel). Homepage also has a JSON-LD `Person` schema block identifying Isaac by name, university, and LinkedIn. `robots.txt` and `sitemap.xml` live at the project root. If adding a 6th project, add its meta block (copy an existing project page's `<head>` as a template) and add its URL to `sitemap.xml`.
 
-### The five projects, in homepage order
-1. **ID0: The Agentic Hardware Robot** — `projects/id0.html` — YC RoboHacks, '26
-2. **Cove: 7DOF Industrial Robotic Arm** — `projects/cove.html` — USC TerraLabs, '26
-3. **Boxy: FIRST Robotics '25** — `projects/boxy.html` — FTC 14473, '25
-4. **Borealis: FIRST Robotics '24** — `projects/borealis.html` — FTC 14473, '24
-5. **Olos: Therapy Audio Journaling Tool** — `projects/olos.html` — USC SEP, '25
+### The six projects, in homepage order (chronological, most recent first)
+1. **Scrambler: Integrated Robotics System for Humanoid Mountain Climbing** — `projects/scrambler.html` — Himalaya Robotics Hack, '26
+2. **ID0: The Agentic Hardware Robot** — `projects/id0.html` — YC RoboHacks, '26
+3. **Cove: 7DOF Industrial Robotic Arm** — `projects/cove.html` — USC TerraLabs, '26
+4. **Boxy: FIRST Robotics '25** — `projects/boxy.html` — FTC 14473, '25
+5. **Borealis: FIRST Robotics '24** — `projects/borealis.html` — FTC 14473, '24
+6. **Olos: Therapy Audio Journaling Tool** — `projects/olos.html` — USC SEP, '25
 
 Note the FIRST Robotics work is intentionally split into two separate project pages (Boxy and Borealis, one per season/competition robot) rather than one combined "FIRST Robotics" page — each has its own distinct mechanical story and should stay separate.
 
-All five detail pages follow an identical structure: back-link → title/meta header → image/video carousel with real media → body copy broken into "The problem" / "What I built" / "Outcome" sections, using Isaac's own written descriptions verbatim. Don't paraphrase or "improve" his copy — it's already in his voice and finalized.
+All six detail pages follow an identical structure: back-link → title/meta header → image/video carousel with real media → body copy broken into "The problem" / "What I built" / "Outcome" sections, using Isaac's own written descriptions verbatim. Don't paraphrase or "improve" his copy — it's already in his voice and finalized.
 
 ## Design system (do not deviate without asking)
 All tokens live in `styles.css` under `:root`.
