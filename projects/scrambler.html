@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scrambler: Robotics System for Humanoid Mountain Climbing — Isaac Chan</title>
+<meta name="description" content="A fully passive climbing hand for the Unitree G1 that lets a humanoid scramble terrain far steeper than it can walk. Built by Isaac Chan, 2nd place at Himalaya Robotics Hack.">
+<link rel="canonical" href="https://www.isaac.engineering/projects/scrambler.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Scrambler: Robotics System for Humanoid Mountain Climbing — Isaac Chan">
+<meta property="og:description" content="A fully passive climbing hand for the Unitree G1 that lets a humanoid scramble terrain far steeper than it can walk. Built by Isaac Chan, 2nd place at Himalaya Robotics Hack.">
+<meta property="og:url" content="https://www.isaac.engineering/projects/scrambler.html">
+<meta property="og:image" content="https://www.isaac.engineering/projects/media/scrambler/scrambler-1.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Scrambler: Robotics System for Humanoid Mountain Climbing — Isaac Chan">
+<meta name="twitter:description" content="A fully passive climbing hand for the Unitree G1 that lets a humanoid scramble terrain far steeper than it can walk. Built by Isaac Chan, 2nd place at Himalaya Robotics Hack.">
+<meta name="twitter:image" content="https://www.isaac.engineering/projects/media/scrambler/scrambler-1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <div class="nav-dropdown">
+      <button class="nav-text dropdown-trigger" type="button">Projects &#9662;</button>
+      <div class="dropdown-menu">
+        <a href="scrambler.html">Scrambler: Humanoid Mountain Climbing</a>
+        <a href="id0.html">ID0: The Agentic Hardware Robot</a>
+        <a href="cove.html">Cove: 7DOF Industrial Robotic Arm</a>
+        <a href="boxy.html">Boxy: FIRST Robotics '25</a>
+        <a href="borealis.html">Borealis: FIRST Robotics '24</a>
+        <a href="olos.html">Olos: Therapy Audio Journaling</a>
+      </div>
+    </div>
+    <a href="https://www.linkedin.com/in/isaac-k-chan" target="_blank" class="nav-icon" aria-label="LinkedIn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4.5 8.5H8V20H4.5V8.5Z" fill="currentColor"/><path d="M6.25 7C7.35 7 8.25 6.1 8.25 5C8.25 3.9 7.35 3 6.25 3C5.15 3 4.25 3.9 4.25 5C4.25 6.1 5.15 7 6.25 7Z" fill="currentColor"/><path d="M10.5 8.5H13.8V10.06H13.85C14.3 9.22 15.4 8.33 17.03 8.33C20.5 8.33 21.5 10.4 21.5 13.4V20H18V14.1C18 12.66 17.5 11.5 16.13 11.5C14.75 11.5 14 12.5 14 14.1V20H10.5V8.5Z" fill="currentColor"/></svg>
+    </a>
+  </nav>
+
+  <div class="project-hero">
+    <a href="../index.html#work" class="back-link">← Back to home</a>
+    <h1>Scrambler: Robotics System for Humanoid Mountain Climbing</h1>
+    <div class="entry-meta">Himalaya Robotics Hack &nbsp;|&nbsp; Mechanical Lead &nbsp;|&nbsp; '26</div>
+  </div>
+
+  <div class="carousel" id="carousel">
+    <div class="carousel-track">
+      <div class="carousel-slide active"><img src="media/scrambler/scrambler-1.jpg" alt="Passive climbing hand with AprilTag-marked fingers on the workbench"></div>
+      <div class="carousel-slide"><video src="media/scrambler/scrambler-2-video.mp4" poster="media/scrambler/scrambler-2-video-poster.jpg" controls playsinline></video></div>
+      <div class="carousel-slide"><img src="media/scrambler/scrambler-3.jpg" alt="Team with the Scrambler hand, 2nd place at Himalaya Robotics Hack"></div>
+      <div class="carousel-slide"><img src="media/scrambler/scrambler-4.jpg" alt="CAD render of the tripod climbing hand mechanism"></div>
+    </div>
+    <div class="carousel-scrubber">
+      <div class="scrub-seg active"></div>
+      <div class="scrub-seg"></div>
+      <div class="scrub-seg"></div>
+      <div class="scrub-seg"></div>
+    </div>
+  </div>
+
+  <div class="project-body">
+    <p>A fully passive climbing hand for the Unitree G1 that lets a humanoid drop to all fours and scramble terrain far steeper than it can walk, adding grip and stability without a single new motor, wire, or line of firmware.</p>
+
+    <h2>The problem</h2>
+    <p>The Unitree G1 walks up to about 30 degrees, and its stock hands are solid zero-DOF blocks that can't grip anything. A standing biped tips once its center of mass leaves the support polygon, so an incline greater than 13° causes the robot to burn power continuously just by staying upright. Humans solve this by using their hands as balance; but the stock G1 has no usable hands, nor is it trained to use all four limbs to climb up inclined surfaces. Actuated hands would mean fragile hardware, wiring, firmware, power draw, and thermal management in subzero conditions.</p>
+
+    <h2>What I built</h2>
+    <p>I led the design of the passive tactile hand built from TPU fin ray fingers and a biomimetic compliant wrist, tuned through FEA and a MuJoCo soft-body approximation of the contact forces. The fin ray geometry turns the robot's own body weight into grip force: pressing down makes the fingers curl and conform to the surface, spreading contact pressure by roughly 35× compared to a rigid hand. For feedback, the team mounted AprilTags on every finger joint and used homography to recover finger curvature and score how well each finger has engaged its hold, allowing for tactile sensing with zero additional electronics. In simulation, we built a 45-degree slope with domain-randomized ice, snow, and rock, plus wind and variable friction, and trained the robot to scramble it on all four limbs.</p>
+
+    <h2>Outcome</h2>
+    <p>Built within 36 hours and won 2nd Place at Himalaya Robotics Hack judged by professional mountaineers and robotics & ML engineering judges.</p>
+  </div>
+
+  <footer>
+    <div>© Isaac Chan 2026</div>
+    <a href="mailto:chanisaa@usc.edu" class="nav-text">chanisaa@usc.edu</a>
+  </footer>
+
+</div>
+
+<script src="../carousel.js"></script>
+<script src="../script.js"></script>
+</body>
+</html>
